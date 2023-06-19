@@ -26,8 +26,8 @@ pip install -r requirements.txt
     {
         "id": "0",
         "question": "question",
-        "paragraphs": [id1, id2, id3, id4],
-        "relevant": id3,
+        "paragraphs": ["id1", "id2", "id3", "id4"],
+        "relevant": "id3",
         "answer": { "text": "answer", "start": 0}
     }
     ```
@@ -123,7 +123,7 @@ python run_qa.py \
 - model name or path: path to the model weights directory, ex. ./roberta_large/qa/
 - output_dir: path to the predict output
 
-# Prediction format convert
+## Prediction format convert
 change prediction output format from ascii to utf-8
 ```
 python pred_convert.py \
@@ -131,10 +131,10 @@ python pred_convert.py \
 <final predict output format path> \
 ```
 
-# Inferencing expample
-inference with bash script
+# Inferencing expample with bash script
+make sure you have the correct model weights in run.sh
 ```bash
-bash run.sh <context.json path>
+bash run.sh <context json path> <test json path>
 ```
 - multiple choice model: ./bert_large/mc/
 - question answer model: ./roberta_large/qa/
